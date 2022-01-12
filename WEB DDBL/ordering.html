@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table width="100%" bgcolor="#38464D">
+        <tr>
+            <td width="60%">
+                <h1>online ordering portal</h1>
+            </td>
+            <td width="30%" align="right">
+                <a href="#pizza"><button type="button">Pizza delivery</button></a>
+                <a href="#room"><button type="button">Room Reservation</button></a>
+                <a href="Activity3.html"><button type="button">HOME</button></a>
+            </td>
+            <td width="10%"></td>
+        </tr>
+    </table>
+    <table width="100%">
+        <tr>
+            <td width="10%"></td>
+            <td width="80%">
+                <h1 id="room">hotel reservation section</h1>
+                <form action="">
+                    <fieldset>
+                        <legend>General Information</legend>
+                        <table>
+                            <tr>
+                                <td align="left">
+                                    <label for="">Arrival Date
+                                        <input type="date" name="date">
+                                    </label><br>
+                                    <label for="">Nights
+                                        <input type="text" name="date">
+                                    </label><br>
+                                    <label for="">Adult
+                                        <input type="number" name="adult" min="1" max="5" size="25"> 
+                                    </label><br>
+                                    <label for="">Children
+                                        <input type="number" name="child" min="0" max="5">
+                                    </label>
+                                </td>
+                            </tr>
+
+                        </table>
+                        
+                    </fieldset>
+                    <fieldset size="50">
+                        <legend>Preferences</legend>
+                        <label for="">Room type    :
+                            <input type="radio" name="room">
+                            <label for="">Standard</label>
+                            <input type="radio" name="room">
+                            <label for="">business</label>
+                            <input type="radio" name="room">
+                            <label for="">Suit</label>
+                        </label><br>
+                        <label for="">BED time    :
+                            <input type="radio" name="room">
+                            <label for="">king</label>
+                            <input type="radio" name="room">
+                            <label for="">double double</label>
+                        </label><br>
+                        <label for="">Smoking
+                            <input type="checkbox" name="date">
+                        </label>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Contact information</legend>
+                        <label for="">Name
+                            <input type="text">
+                        </label><br>
+                        <label for="">Nights
+                            <input type="email">
+                        </label><br>
+                        <label for="">Phone
+                            <input type="text" placeholder="111-222-3333">
+                        </label>
+                    </fieldset>
+                    <input type="submit" value=" submit reservation" value>
+                    <input type="reset" value="clear">
+                </form>
+                <h1 id="pizza"> pizza delivery</h1>
+                <form action="">
+                    <table>
+                        <tr>
+                            <td align="right">
+                                <label for="">name:
+                                    <input type="text" required>
+                                </label><br>
+                                <label for="">Address:
+                                    <input type="text" required>
+                                </label><br>
+                                <label for="">Town city:
+                                    <input type="text" required>
+                                </label><br>
+                                <label for="">Pass code:
+                                    <input type="text" required>
+                                </label><br>
+
+                            </td>
+                            <td width="50px"></td>
+                            <td valign="top" align="right"> 
+                                <label for="">ID:
+                                    <input type="text"required>
+                                </label><br>
+                                <label for="">Email:
+                                    <input type="email" required>
+                                </label><br>
+
+                            </td>
+                        </tr>
+                    </table>
+                   
+                   
+                    <table>
+                        <tr>
+                            <td>
+                                <fieldset>
+                                    <legend>Topping</legend>
+                                    <input type="radio" name="top">
+                                    <label for="">maragritta </label><br>
+                                    <input type="radio" name="top">
+                                    <label for="">maat feast </label><br>
+                                    <input type="radio" name="top">
+                                    <label for="">four seasons</label><br>
+                                </fieldset>
+
+                            </td>
+                            <td>
+                                <fieldset>
+                                    <legend>Size</legend>
+                                    <input type="radio" name="size">
+
+                                    <label for="">small</label><br>
+                                    <input type="radio" name="size">
+
+                                    <label for="">medium</label><br>
+                                    <input type="radio" name="size">
+
+                                    <label for="">large </label><br>
+                                </fieldset>
+                            </td>
+                            <td>
+                                <fieldset>
+                                    <legend>Extra</legend>
+                                    <input type="checkbox">
+                                    <label for="">mushroom </label><br>
+                                    <input type="checkbox">
+                                    <label for="">Green pepper</label><br>
+                                    <input type="checkbox">
+                                    <label for="">extra cheese</label><br>
+                                    <input type="checkbox">
+                                    <label for="">salad </label><br>
+                                </fieldset>
+
+                            </td>
+                        </tr>
+                    </table><br>
+                   
+                   
+                   
+                    <label for="">dilvery time:
+                        <input type="time" required>
+                    </label><br>
+                    <label for="">Address:
+                        <textarea name="dscrib" id="" cols="20" rows="5"></textarea>
+                    </label><br>
+                    <label for="">name:
+                        <input type="text">
+                    </label>
+
+                </form>
+            </td>
+            <td width="10%"></td>
+        </tr>
+    </table>
+</body>
+</html>
