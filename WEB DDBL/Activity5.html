@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handling</title>
+    <link rel="stylesheet" href="styles/eventstyle.css">
+</head>
+<body>
+    <header>
+        <img src="images/logo_gold.png" alt="logo">
+        <nav>
+            <ul>
+                <li><a href="Activity2.html">HOME</a></li>
+                <li><a href="ordering.html">ORDER</a></li>
+                <li><a href="Activity3.html">BUSINESS</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="formcontainer">
+            <h1>Register</h1>
+            <form onsubmit="return validate()">
+                <label>
+                    Full Name:<br />
+                    <input type="text" name="name" id="name" required>
+                </label>
+                <br />
+                <label>
+                    phone:<br />
+                    <input type="tel" id="tel" required>
+                </label>
+                <br />
+                <label>
+                    Age:<br />
+                    <input type="text" id="age">
+                </label><br>
+                <label>
+                    Email:<br />
+                    <input type="text"  placeholder="email" id="email">
+                </label><br>
+            
+                <label>
+                    Password:<br />
+                    <input type="text" id="pass" placeholder="password" required>
+                </label>
+                <br />
+                <br />
+                <p>comment</p>
+               <textarea name="describe" rows="5" cols="50" id="message">start....</textarea>
+               <br>
+               <input type="submit" value="submit">
+               <input type="reset" value="reset">
+            </form>
+
+        </div>
+        <div class="mediacontainer">
+            <h1>multimedia event handling</h1>
+            <p>handles events like on play, on pause, on speed change, </p>
+            <!-- below on the attribute there is inline script-->
+            <video id="myvideo" width="350px" height="200px"  onpause="myFunction()" onplay="alert('video playing')" onratechange="myFunction4()" controls>
+                <source src="videos/24_HOURS.mp4" type="video/mp4">
+            </video><br>
+            <!--below is internal script -->
+            <script>
+                function myFunction() {
+                    alert("video is paused");
+                }
+                function myFunction2(){
+                   ;
+                }
+                /*let v;
+                document.getElementById("myvideo");
+        
+                function setplayspeed(){
+                    v.playbackRate = 0.4;
+                }*/
+                function myFunction4(){
+                    alert("video is is playing at slow motion");
+                }
+            </script>
+        </div>
+
+    </div>
+    <!--external script -->
+    <script src="script/EventHandle.js"></script>
+</body>
+</html>
