@@ -1,0 +1,153 @@
+<!-- object is created at the backend, form lay after submit the 
+the data is submitted created object will contain
+
+and after retrieve the text area display in it
+
+your favorite: color " Airplane" code-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form and Interaction</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-around;
+        }
+        .form-container, .result-container {
+            background-color: #8a219f;
+            top: 50%;
+            transform: translate(0, 35%);
+            width: 300px;
+            padding: 40px;
+            color: #FFF;
+        }
+
+        .input-form input {
+            margin-top: 10px;
+            display: block;
+            width: 100%;
+            padding: 10px;
+        }
+
+        input[type="color"] {
+            margin: 10px;
+
+        }
+
+        .btn {
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        .btn1 {
+            width: 40%;
+        }
+
+        .result-container {
+            height: auto;
+            padding: 10px;
+            display: none;
+            width: auto;
+            transition: ease-in 0.3s;
+        }
+        li {
+            list-style: none;
+            font-size: 1.3rem;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-container">
+            <form onsubmit="return false">
+                <div class="input-form">
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" id="name">
+    
+                    <label for="phone">phone:</label>
+                    <input type="number" name="phone" id="phone">
+    
+                    <label for="Email">Email:</label>
+                    <input type="email" name="Email" id="email">
+                </div>
+    
+                <label for="Color">Color:</label>
+                <input type="color" name="Color" id="color">
+    
+                <div class="btn">
+                    <input type="submit" class="btn1">
+                    <button class="btn1" id="retrieve"> Retrieve </button>
+                </div>
+            </form>
+        </div>
+        <div class="result-container" id="showInfo">
+        </div>
+    </div>
+
+
+    <script>
+        
+        //constructor prototype
+        function formData(name, phone, email, color) {
+            this.name = name;
+            this.phone = phone;
+            this.email = email;
+            this.color =  color + "  " + "Airplane" ;
+        }
+
+        // retrieving data from local storage
+        let retrieveBtn = document.getElementById('retrieve')
+        let resultContainer = document.getElementById('showInfo');
+
+        retrieveBtn.addEventListener('click', () => {
+
+            resultContainer.innerHTML = " ";
+            const retrieved_data = JSON.parse(localStorage.getItem('form'));
+
+            let ul = document.createElement('ul');
+
+            const listArray = [retrieved_data.name, retrieved_data.phone, retrieved_data.email, retrieved_data.color]
+            let i = 0;
+
+            for (data in retrieved_data) {
+
+                let list = document.createElement('li')
+                let text  = document.createTextNode(`${data}: ${listArray[i]}`.toUpperCase())
+                list.appendChild(text)
+                ul.appendChild(list)
+                i += 1
+            }
+
+            resultContainer.appendChild(ul);
+            resultContainer.style.display = "flex";
+        })
+
+
+        //storing  object data in local storage
+        function storeData() {
+
+            let name = document.getElementById('name').value;
+            let phone = document.getElementById('phone').value;
+            let email = document.getElementById('email').value;
+            let color = document.getElementById('color').value;
+            const form_information = new formData(name, phone, email, color);
+            localStorage.setItem('form', JSON.stringify(form_information));
+
+        }
+
+        addEventListener('submit', event => {
+
+            event.preventDefault();
+            storeData();
+        })
+
+    </script>
+</body>
+</html>
